@@ -1,3 +1,85 @@
+## 以自己经验用Git
+### Git基础概念
+Git = word写文档	GitHub = 腾讯文档分享协作
+
+Git三个区域
+
+```git
+工作区（Working Directory）—— 你正在编辑的文件
+  ↓ git add
+暂存区（Staging Area）—— 即将提交的快照
+  ↓ git commit
+版本库（Repository）—— Git 保存的历史记录
+```
+
+完整的开发流程通常是：
+
+```git
+# 修改代码
+git add 文件名             # 添加文件到暂存区
+git commit -m "说明信息"   # 提交暂存区到版本库
+```
+
+---
+
+### 本地 Git 仓库操作
+以下内容是指在终端中使用
+
+```git
+git config --global user.name "待填入名字"
+git config -- global user.email "待填入邮箱"	#建议使用注册GitHub的用户名和邮箱，便于同步
+                                  # --global 表示在你这台电脑上的所有仓库都使用这套设置。
+
+git init #建立Git仓库，初始化Git仓库
+         #或者从GitHub上拉一个项目（如刚创建了远程仓库）
+git clone https://github.com/Sirens007/MyStorage.git
+
+#如创建一个新文件
+echo "#我的第一个项目" > README.md
+#添加到Git暂存区
+git add README.md
+#提交到本地仓库
+git commit -m "添加了README文件"
+#绑定 GitHub 仓库作为远程仓库 origin	（即origin为远程仓库昵称）
+git remote add origin https://github.com/Sirens007/MyStorage.git
+#首次推送GitHub
+git push -u origin main #如果提示 main 不存在，可以先用 git branch -M main 把默认的 master 分支改名。
+
+git status
+#查看当前工作状态 （如查看还未暂存的文件
+git log
+#查看提交历史
+
+```
+
+---
+
+### 查看状态与差异
+当你已经完成了基本的 `add` 和 `commit` 操作后，日常开发中你最常用的两个命令是：
+
++ `git status`：查看当前仓库状态
++ `git diff`：查看文件内容发生了哪些改动
+
+**一、git status —— 查看状态**
+
+```git
+git status
+```
+
+** 作用：**
+
+查看当前工作区和暂存区的状态。
+
+** 原理解释：**
+
+Git 会比较这三者的内容是否一致：
+
+1. **工作目录中的文件**
+2. **暂存区中的文件（通过 git add 添加的）**
+3. **最后一次提交的版本（历史）**
+
+
+
 ## Git工作流程
 ![](https://cdn.nlark.com/yuque/0/2025/png/49819380/1752228604355-40300e5a-f863-468c-92e6-de44d1592207.png)
 
