@@ -1,5 +1,5 @@
 ## 以自己经验用Git
-### Git基础概念
+### 1.Git基础概念
 Git = word写文档	GitHub = 腾讯文档分享协作
 
 Git三个区域
@@ -22,7 +22,7 @@ git commit -m "说明信息"   # 提交暂存区到版本库
 
 ---
 
-### 本地 Git 仓库操作
+### 2.本地 Git 仓库操作
 以下内容是指在终端中使用
 
 ```git
@@ -54,7 +54,7 @@ git log
 
 ---
 
-### 查看状态与差异
+### 3.查看状态与差异
 当你已经完成了基本的 `add` 和 `commit` 操作后，日常开发中你最常用的两个命令是：
 
 + `git status`：查看当前仓库状态
@@ -78,7 +78,218 @@ Git 会比较这三者的内容是否一致：
 2. **暂存区中的文件（通过 git add 添加的）**
 3. **最后一次提交的版本（历史）**
 
+<details class="lake-collapse"><summary id="u29606243"><strong><span class="ne-text">结果分析</span></strong></summary><h4 id="98be1ecf"><span class="ne-text">情况1：工作区干净</span></h4><pre data-language="git" id="WQi54" class="ne-codeblock language-git"><code>$ git status
+On branch master
+nothing to commit, working tree clean</code></pre><p id="u0e2b9816" class="ne-p"><span class="ne-text">意思是：没有文件被修改，也没有新增或删除。</span></p><hr id="sfw3z" class="ne-hr"><h4 id="3e1a3f71"><span class="ne-text" style="color: #DF2A3F">🟡</span><span class="ne-text" style="color: #DF2A3F"> </span><span class="ne-text">情况2：修改了文件但还没 add</span></h4><pre data-language="git" id="ZGtno" class="ne-codeblock language-git"><code>$ git status
+modified:   hello.txt</code></pre><p id="ufa272c14" class="ne-p"><span class="ne-text">说明 </span><code class="ne-code"><span class="ne-text">hello.txt</span></code><span class="ne-text"> 有改动，但还没有被添加进暂存区。</span></p><hr id="otrcG" class="ne-hr"><h4 id="c160fd94"><span class="ne-text">🟢</span><span class="ne-text"> 情况3：已 add 到暂存区但还没 commit</span></h4><pre data-language="git" id="L2q4R" class="ne-codeblock language-git"><code>$ git status
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+        modified:   hello.txt</code></pre></details>
+**二、git diff —— 查看修改内容**
 
+```git
+git diff
+```
+
+** 作用：**
+
++ 显示当前工作目录中未加入暂存区的变更（对比的是：工作区 ↔ 暂存区）
+
+---
+
+**你也可以用：**
+
+```git
+git diff hello.txt
+```
+
+来查看某个具体文件的改动。
+
+<details class="lake-collapse"><summary id="u423a2fc5"><strong><span class="ne-text">补充</span></strong></summary><h3 id="k8LQy"><span class="ne-text">查看已经 add 但还未 commit 的差异：</span></h3><pre data-language="git" id="J3Z0b" class="ne-codeblock language-git"><code>git diff --cached</code></pre><p id="u52bf5124" class="ne-p"><span class="ne-text">或者：</span></p><pre data-language="git" id="cEllX" class="ne-codeblock language-git"><code>git diff --staged</code></pre><h4 id="u539c"><span class="ne-text"></span><span class="ne-text">作用：</span></h4><ul class="ne-ul"><li id="udf0dfced" data-lake-index-type="0"><span class="ne-text">查看“暂存区”中与“上一次提交版本”之间的差异。</span></li></ul></details>
+---
+
+### 4.文件恢复与版本回退
+**开发中你经常会遇到这些情况：**
+
+| **场景** | **想做的事** |
+| --- | --- |
+| 改错文件了 | 想恢复回之前保存的版本 |
+| add 错文件了 | 想撤回到未暂存状态 |
+| commit 之后后悔了 | 想撤销或回退提交 |
+| 改了很多但不想要了 | 想恢复整个文件夹到之前状 |
+
+
+**本节主要命令：**
+
++ `git restore`：恢复文件内容（推荐）
++ `git checkout`：旧版本恢复（老派用法）
++ `git reset`：取消暂存、版本回退
++ `git log`：查看历史提交
+
+---
+
+** ****一、恢复工作区文件：**`**git restore**`
+
+```git
+git restore <filename>
+
+eg:
+echo "bad line" >> hello.txt      # 加了一行错误内容
+git restore hello.txt             # 撤销这次改动
+```
+
+**作用**：
+
+把某个文件恢复到上一次 `git add` 或 `git commit` 之后的状态，**取消你刚刚改的内容**。
+
+**背后原理：**
+
+从 Git 暂存区或仓库中拿出该文件的版本，覆盖当前工作区。
+
+---
+
+** 二、撤销 **`**git add**`**：**`**git restore --stage**d`
+
+```git
+git restore --staged <filename>
+
+eg:
+git add hello.txt
+git restore --staged hello.txt  #撤回add，但改动还在
+```
+
+**作用：**
+
+把文件从**暂存区**移除，但保留工作区的改动。
+
+**使用场景：**
+
+你 `git add` 了一个不该提交的文件，可以用这条命令撤回。
+
+---
+
+ **三、版本回退：**`**git reset**`
+
+**命令：取消已经 add 的内容**
+
+```git
+git reset filename
+```
+
+等效于上面那句 `git restore --staged`，只是老一点的写法。
+
+---
+
+**命令：回退到上一个提交版本（慎用）**
+
+```git
+git reset --hard HEAD
+```
+
+**作用：**
+
+把整个项目（工作区 + 暂存区）恢复到上一次提交的状态。
+
+ ❗❗ 注意：`--hard` 是“硬回退”，**不可恢复的清空当前修改**，一定要确认再用！  
+
+---
+
+** 四、查看历史版本：**`**git log**`
+
++ 显示提交历史
++ 会看到一堆 `commit xxx...` 的 ID、作者、时间、提交说明
+
+```git
+git log
+
+eg:
+git log -p hello.txt	#查看历史内容改了什么
+```
+
+### 5.分支管理（分支的创建、切换、合并）
+在实际开发中，我们经常会遇到这种需求：
+
++ 不打扰主线代码，先试试一个新功能
++ 多个开发人员各自写各自的功能
++ 想在多个版本之间切换工作
+
+这时，就要用到「**分支（branch）**」来隔离、管理不同的开发线。
+
+**Git 分支基本概念**
+
++ **主分支**：默认叫 `master`（或 `main`）
++ **分支的本质**：一个指向某次提交的“指针”
++ **HEAD**：指向当前分支的位置（你正在干活的分支）
+
+**1.查看已有分支 **`**git branch 分支名**`
+
+```git
+git branch
+```
+
++ 会列出当前所有分支，当前所在的分之前有`*`标记
+
+---
+
+**2.创建新分支：**`git branch 分支名`
+
+```git
+git branch dev
+```
+
++ 创建一个名为dev的新分支，复制自当前分支的最新提交。
+
+---
+
+**3.切换分支：**`git switch 分支名`
+
+```git
+git switch dev
+```
+
++ 此时已切换dev分支，开始在上面开发了
++ 如果是老版本Git，也可以用`git checkout dev`。
+
+---
+
+**4.创建并切换新分支：一条命令搞定**
+
+```git
+git switch -c dev
+```
+
+相当于：
+
+```git
+git branch dev
+git switch dev
+```
+
+Git 会尝试把`dev`上的改动合并进master，如果没有冲突，会自动完成。
+
+---
+
+
+**5.合并分支：`git merge`**
+
+切换会主分支后，合并新分支的内容：
+
+```git
+git switch main
+git merge dev
+```
+
+Git 会尝试把`dev`上的改动合并进main，如果没有冲突，会自动完成。
+
+---
+
+**6.删除分支（合并后清理）：`git branch -d`**
+
+```git
+git branch -d dev
+```
+
+如果你确认合并完了，就可以删掉旧分支。
 
 ## Git工作流程
 ![](https://cdn.nlark.com/yuque/0/2025/png/49819380/1752228604355-40300e5a-f863-468c-92e6-de44d1592207.png)
