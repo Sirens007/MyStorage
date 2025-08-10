@@ -215,6 +215,9 @@ git log -p hello.txt	#查看历史内容改了什么
 
 这时，就要用到「**分支（branch）**」来隔离、管理不同的开发线。
 
+> <font style="color:#DF2A3F;">补充对分支的理解，如我在main分支创建了a.txt （未add），此时创建dev分支可以看见main分支对a.txt的更改。但如果我在dev上commit之后，回到main之后则不存在a.txt文件了，就相当于两个工作区一样</font>
+>
+
 **Git 分支基本概念**
 
 + **主分支**：默认叫 `master`（或 `main`）
@@ -231,7 +234,7 @@ git branch
 
 ---
 
-**2.创建新分支：**`git branch 分支名`
+**2.创建新分支：**`**git branch 分支名**`
 
 ```git
 git branch dev
@@ -241,7 +244,7 @@ git branch dev
 
 ---
 
-**3.切换分支：**`git switch 分支名`
+**3.切换分支：**`**git switch 分支名**`
 
 ```git
 git switch dev
@@ -269,8 +272,7 @@ Git 会尝试把`dev`上的改动合并进master，如果没有冲突，会自�
 
 ---
 
-
-**5.合并分支：`git merge`**
+5.合并分支：`git merge`
 
 切换会主分支后，合并新分支的内容：
 
@@ -283,13 +285,162 @@ Git 会尝试把`dev`上的改动合并进main，如果没有冲突，会自动�
 
 ---
 
-**6.删除分支（合并后清理）：`git branch -d`**
+6.删除分支（合并后清理）：`git branch -d`
 
 ```git
 git branch -d dev
 ```
 
 如果你确认合并完了，就可以删掉旧分支。
+
+### 6.搭建ssh远程连接（无需梯子）
+**一、配置git bash**
+
+在git bash中运行以下：
+
+```git
+ssh-keygen -t ed25519 -C "你的GitHub邮箱"
+```
+
+当提示：
+
+```git
+Enter file in which to save the key (~/.ssh/id_ed25519):
+```
+
+你可以直接回车（会覆盖旧的 id_ed25519）  
+或者输入一个新名字，比如：
+
+```git
+~/.ssh/id_ed25519_laptop
+```
+
+---
+
+**二、启用新的ssh key**
+
+```bash
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_ed25519_laptop
+```
+
+**三、把公钥加到Github**
+
+```git
+cat ~/.ssh/id_ed25519_laptop.pub
+```
+
+ 复制整段（从 `ssh-ed25519` 开始到最后），  
+然后在 GitHub → **Settings** → **SSH and GPG keys** → **New SSH key** → 粘贴保存。  
+标题建议写成 “Laptop - 2025” 这种好区分的名字。  
+
+**四、验证**
+
+```git
+ssh -T git@github.com
+```
+
+看到：
+
+```git
+Hi Sirens007! You've successfully authenticated...
+```
+
+说明配置成功
+
+### 7.远程仓库操作
+**1.远程仓库概念**
+
+ 本地 Git 仓库 = 你电脑上的版本库（`.git` 目录）。  
+远程仓库 = 存在于服务器（比如 GitHub）上的版本库。
+
+**2.四个常用操作**
+
+**（1）clone - 从远程仓库下载到本地**
+
+```git
+git clone https://github.com/Sirens007/MyStorage.git
+
+#运行后，你本地就有一个 myproject 目录，并且可以直接 git pull 或 git push。
+```
+
+作用：
+
++ 会在本地新建一个文件夹
++ 自动把该仓库的所有版本历史下载到本地
++ 自动设置好 `origin` 这个远程名，指向该仓库
+
+**（2）remote - 管理远程仓库地址**
+
+查看已有远程：
+
+```git
+git remote -v
+```
+
+添加远程：
+
+```git
+git remote add origin https://github.com/Sirens007/MyStorage.git
+```
+
+修改远程：
+
+```git
+git remote set-url origin <新地址>
+```
+
+删除远程：
+
+```git
+git remote remove origin
+```
+
+`origin` 是默认的远程仓库名字，你也可以用别的名字。
+
+---
+
+**（3）push - 推送本地代码到远程**
+
+第一次推送（如果远程没有内容）：
+
+```git
+git push -u origin main
+```
+
+解释：
+
++ `origin`：远程仓库名
++ `main`：分支名
++ `-u`：记住这个推送目标，下次可以直接`git push`
+
+之后推送就可以：
+
+```git
+git push
+```
+
+---
+
+**（4）pull - 从远程拉取最新版本**
+
+```git
+git pull origin main
+```
+
+作用：
+
++ 把远程 main 分支的最新提交下载到本地
++ 并与本地当前分支合并
+
+如果远程没有变化，你会看到：
+
+```git
+Already up to date.
+```
+
+
 
 ## Git工作流程
 ![](https://cdn.nlark.com/yuque/0/2025/png/49819380/1752228604355-40300e5a-f863-468c-92e6-de44d1592207.png)
