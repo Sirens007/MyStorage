@@ -319,7 +319,7 @@ Enter file in which to save the key (~/.ssh/id_ed25519):
 
 **二、启用新的ssh key**
 
-```bash
+```git
 eval "$(ssh-agent -s)"
 
 ssh-add ~/.ssh/id_ed25519_laptop
@@ -371,6 +371,10 @@ git clone https://github.com/Sirens007/MyStorage.git
 + 自动把该仓库的所有版本历史下载到本地
 + 自动设置好 `origin` 这个远程名，指向该仓库
 
+
+
+---
+
 **（2）remote - 管理远程仓库地址**
 
 查看已有远程：
@@ -399,6 +403,8 @@ git remote remove origin
 
 `origin` 是默认的远程仓库名字，你也可以用别的名字。
 
+
+
 ---
 
 **（3）push - 推送本地代码到远程**
@@ -421,6 +427,8 @@ git push -u origin main
 git push
 ```
 
+
+
 ---
 
 **（4）pull - 从远程拉取最新版本**
@@ -441,6 +449,86 @@ Already up to date.
 ```
 
 
+
+---
+
+（5）远程分支与本地分支的关系
+
++ 当你执行 `git clone` 或 `git fetch` 后，Git 会在本地维护远程分支的快照，叫做 **远程跟踪分支**，格式一般是 `origin/分支名`。
++ 本地分支和远程分支是分开的，推送（`push`）和拉取（`pull`）就是它们之间的同步操作。
+
+
+
+---
+
+（6）查看远程分支
+
+```git
+git branch -r
+```
+
++ 只列出远程仓库的分支
+
+```git
+git branch -a
+```
+
++ 本地和远程所有分支都会显示
+
+
+
+---
+
+（7）跟踪远程分支的新建本地分支
+
+如果远程有个分支，你想在本地工作，需要先新建一个本地分支跟踪远程：
+
+```git
+git switch-c dev origin/dev
+```
+
++ 这会基于远程`dev`分支新建本地`dev`分支
+
+
+
+---
+
+（8）远程仓库冲突解决
+
+多人合作时，推送可能被拒绝，提示远程有更新需要先拉取：
+
+```git
+git push
+To https://github.com/xxx.git
+ ! [rejected]        main -> main (fetch first)
+error: failed to push some refs to 'https://github.com/xxx.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. ...
+```
+
+这时，需要先拉取远程的最新修改：
+
+```git
+git pull --rebase origin main
+```
+
++ `--rebase` 表示把你的提交“挪到”最新远程修改之后，避免额外合并提交。
+
+
+
+---
+
+（9）查看远程仓库详情
+
+```git
+git remote show origin
+```
+
+可以看到：
+
++ 远程分支状态
++ 你本地分支对应的上游分支
++ 是否有可推送或拉取的内容
 
 ## Git工作流程
 ![](https://cdn.nlark.com/yuque/0/2025/png/49819380/1752228604355-40300e5a-f863-468c-92e6-de44d1592207.png)
