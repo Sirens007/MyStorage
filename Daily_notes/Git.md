@@ -148,7 +148,7 @@ git restore hello.txt             # 撤销这次改动
 
 ---
 
-** 二、撤销 **`**git add**`**：**`**git restore --stage**d`
+** 二、撤销 **`git add`**：**`git restore --staged`
 
 ```git
 git restore --staged <filename>
@@ -224,7 +224,7 @@ git log -p hello.txt	#查看历史内容改了什么
 + **分支的本质**：一个指向某次提交的“指针”
 + **HEAD**：指向当前分支的位置（你正在干活的分支）
 
-**1.查看已有分支 **`**git branch 分支名**`
+**1.查看已有分支： **`git branch 分支名`
 
 ```git
 git branch
@@ -234,7 +234,7 @@ git branch
 
 ---
 
-**2.创建新分支：**`**git branch 分支名**`
+**2.创建新分支：**`git branch 分支名`
 
 ```git
 git branch dev
@@ -244,7 +244,7 @@ git branch dev
 
 ---
 
-**3.切换分支：**`**git switch 分支名**`
+**3.切换分支：**`git switch 分支名`
 
 ```git
 git switch dev
@@ -452,7 +452,7 @@ Already up to date.
 
 ---
 
-（5）远程分支与本地分支的关系
+**（5）远程分支与本地分支的关系**
 
 + 当你执行 `git clone` 或 `git fetch` 后，Git 会在本地维护远程分支的快照，叫做 **远程跟踪分支**，格式一般是 `origin/分支名`。
 + 本地分支和远程分支是分开的，推送（`push`）和拉取（`pull`）就是它们之间的同步操作。
@@ -461,7 +461,7 @@ Already up to date.
 
 ---
 
-（6）查看远程分支
+**（6）查看远程分支**
 
 ```git
 git branch -r
@@ -479,7 +479,7 @@ git branch -a
 
 ---
 
-（7）跟踪远程分支的新建本地分支
+**（7）跟踪远程分支的新建本地分支**
 
 如果远程有个分支，你想在本地工作，需要先新建一个本地分支跟踪远程：
 
@@ -493,7 +493,7 @@ git switch-c dev origin/dev
 
 ---
 
-（8）远程仓库冲突解决
+**（8）远程仓库冲突解决**
 
 多人合作时，推送可能被拒绝，提示远程有更新需要先拉取：
 
@@ -518,7 +518,7 @@ git pull --rebase origin main
 
 ---
 
-（9）查看远程仓库详情
+**（9）查看远程仓库详情**
 
 ```git
 git remote show origin
@@ -529,6 +529,8 @@ git remote show origin
 + 远程分支状态
 + 你本地分支对应的上游分支
 + 是否有可推送或拉取的内容
+
+
 
 ## Git工作流程
 ![](https://cdn.nlark.com/yuque/0/2025/png/49819380/1752228604355-40300e5a-f863-468c-92e6-de44d1592207.png)
