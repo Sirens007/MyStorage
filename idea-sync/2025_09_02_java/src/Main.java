@@ -1,10 +1,7 @@
 import java.util.Scanner;
 
-//今天作业是164.42 单独取出数字
 public class Main {
     public static void main(String[] args) {
-//        Test2 t1 = new Test2();
-//        t1.test2();
         Homework h1 = new Homework();
         h1.task();
     }
@@ -12,15 +9,30 @@ public class Main {
 
 class Homework{
     void task(){
-        double num = 164.42;
-        String str = String.valueOf(num);
-        char ch = 0;
-        int digit = 0;
+        Scanner scanner = new Scanner(System.in);
+        double num = scanner.nextDouble();
+        String str = Double.toString(num);
+
+        //统计数字个数
+        int count = 0;
         for(int i = 0;i < str.length();i++){
-            ch = str.charAt(i);
+            if(str.charAt(i) != '.'){
+                count++;
+            }
+        }
+
+        int length = 0;                         //用来判断是否需要空格
+        for(int i = 0;i < str.length();i++){
+            char ch = str.charAt(i);            //用ch存储每一次读到的字符
             if(ch != '.'){
-                digit = ch - '0';
-                System.out.println(digit);
+                length++;
+                int digit = ch - '0';
+                if(length == count){
+                    System.out.print(digit);
+                }
+                else{
+                    System.out.print(digit+" ");
+                }
             }
         }
     }
