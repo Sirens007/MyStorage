@@ -9,10 +9,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Task t1 = new Task();
-        t1.test();
+
     }
 }
+
+class
 
 class Task{
     void test(){

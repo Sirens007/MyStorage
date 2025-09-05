@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main {
+public class main {
     public static void main(String[] args) {
 //        //        StringTools.reverse();  //静态方法直接调用函数名
 //        System.out.println("请输入字符：");
