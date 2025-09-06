@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ff75c6e0-c360-4cd3-a707-cd5b4859a5c0" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/idea-sync/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/.idea/idea-sync.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_02_java/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_02_java/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_02_java/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_02_java/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_02_java/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_02_java/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_02_java/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_02_java/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_02_java/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_02_java/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_02_java/2025_09_02_java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_02_java/2025_09_02_java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_02_java/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_02_java/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_03_java/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_03_java/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_03_java/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_03_java/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_03_java/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_03_java/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_03_java/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_03_java/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_03_java/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_03_java/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_03_java/2025_09_03_java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_03_java/2025_09_03_java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_03_java/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_03_java/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_04_java/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_04_java/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_04_java/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_04_java/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_04_java/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_04_java/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_04_java/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_04_java/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_04_java/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_04_java/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_04_java/2025_09_04_java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_04_java/2025_09_04_java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_04_java/src/main.java" beforeDir="false" afterPath="$PROJECT_DIR$/2025_09_04_java/src/main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_05_java/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_05_java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_05_java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_05_java/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_05_java/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_05_java/2025_09_05_java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_05_java/src/main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_06_java/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_06_java/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_06_java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_06_java/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_06_java/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_06_java/2025_09_06_java.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/2025_09_06_java/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/Project1/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/Project1/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/Project1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/Project1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/Project1/Project1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/Project1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea-sync/Project1/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project1/src/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sirens007&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Sirens007/MyStorage.git&quot;,
+    &quot;accountId&quot;: &quot;61060a5e-eff5-47ce-9807-6c6cdb6f4532&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="32HEEV3MSOVKfzZmqJmkig9PqoF" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "code-sync",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/29216/Desktop/Mystorage",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
+        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="ff75c6e0-c360-4cd3-a707-cd5b4859a5c0" name="更改" comment="" />
+      <created>1757068986150</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1757068986150</updated>
+      <workItem from="1757068987268" duration="65000" />
+      <workItem from="1757164774326" duration="223000" />
+      <workItem from="1757165214458" duration="601000" />
+      <workItem from="1757165827413" duration="24000" />
+      <workItem from="1757165876986" duration="202000" />
+      <workItem from="1757166913200" duration="277000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
