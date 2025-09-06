@@ -119,3 +119,4 @@ class Config{
         return instance;                //返回同一份引用
     }
 }
+
